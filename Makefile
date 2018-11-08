@@ -1,4 +1,4 @@
-.PHONY: build-image push-image
+.PHONY: build tag push
 
 IMAGE=kodemill/diag-api
 LATEST_TAG=$(IMAGE):latest
