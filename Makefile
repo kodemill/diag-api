@@ -12,6 +12,6 @@ tag:
 	docker tag $(IMAGE) $(BUILD_TAG)
 
 push:
-	docker login -u $(DOCKER_USERNAME) -p $(DOCKER_PASSWORD)
+	docker login -u $(DOCKER_USER) -p $(DOCKER_PASSWORD)
 	docker push $(LATEST_TAG)
 	docker push $(BUILD_TAG)
