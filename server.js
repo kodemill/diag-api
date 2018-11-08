@@ -5,6 +5,12 @@ const host = '0.0.0.0'
 
 const app = express()
 
+app.use((req, res, next) => {
+  console.log(`${req.method} ${req.originalUrl}`)
+  console.log(req.headers)
+  next()
+})
+
 app.get('/text/ping', (_, res) => {
   res.set('Content-Type', 'text/plain').send('pong\n')
 })
@@ -23,6 +29,8 @@ app.use((err, _, res, next) => {
   }
   res.status(500).json({ message: '🔥 smg went wrong for real 🔥' })
 })
+
+app.use('/static', express.static('static'))
 
 app.listen(port, host, () => {
   console.log(`diag-api listening on ${host}:${port}`)
