@@ -1,5 +1,7 @@
 FROM node:10-alpine
 
+LABEL maintainer="miklos.suveges@gmail.com"
+
 WORKDIR /usr/src/app
 
 COPY package*.json ./
